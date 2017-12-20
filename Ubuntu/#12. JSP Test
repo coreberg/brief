@@ -1,0 +1,30 @@
+#12. JSP Test
+
+$ sudo vi /var/lib/tomcat8/webapps/ROOT/hello.jsp
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+     pageEncoding="EUC-KR"%>
+<%
+out.println("hello");
+%>
+
+
+" MariaDB, Mysql
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+     pageEncoding="EUC-KR"%>
+<%@ page import = "java.sql.*" %>
+<%
+Connection conn = null;
+try {
+     String url = "jdbc:mysql://localhost:3306/database-name";
+     String id = "user-name";
+     String pw = "*****";
+     Class.forName("com.mysql.jdbc.Driver");
+     conn=DriverManager.getConnection(url, id, pw);
+     out.println("Connect!!!");
+} catch(Exception e) {
+     out.println("Error!!!");
+     e.printStackTrace();
+}
+
+out.println("hello");
+%>

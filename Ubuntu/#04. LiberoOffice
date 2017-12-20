@@ -1,0 +1,12 @@
+#04. LiberoOffice
+
+1. Tools > Options... > Language Settings > Languages
+ > Default Languages for Documents
+ > [v] Asian: Korean (RoK)
+
+2. Tools > Auto Correct > Auto Correct Options... > Localized Options
+ > Single Quotes > [ ] Replace
+ > Double Quotes > [ ] Replace
+
+3. Functions Keys...
+Tools > Customize... > Keyboard

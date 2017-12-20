@@ -1,0 +1,13 @@
+#01. apt
+
+$ apt-get update
+$ apt-get upgrade
+
+$ apt-cache search [package name]
+$ apt-cache show [package name]
+
+$ apt-get install [package name]
+$ apt-get --reinstall install [package name]
+
+$ apt-get remove [package name]
+$ sudo apt-get purge [package name]

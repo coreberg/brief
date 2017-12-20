@@ -1,0 +1,28 @@
+#02. Ubuntu 17.10
+
+$ sudo passwd root
+
+
+"Korean
+
+1. Software Center > GNOME Tweaks > [ Install ]
+
+2. GNOME Tweaks > Keyboard & Mouse > [ Additional Layout Options ]...
+Korean Hangul/Hanja keys...
+[v] Hardware Hangul/Hanja Keys
+
+3. Settings > Region & Language > Manage Installed Languages > [
+Install ] > ibus-hangul...
+
+4. Restart or Log out
+
+5. Region & Language > Input Sources > "+" > Korean(Hangul) > "Add"
+English (US) > "-"
+
+6. Korean(Hangul) > Setup > iBusHangul Setup
+ > Hangul toggle key...
+   Hangul
+   Shift+space
+ > Hanja...
+   Hangul_Hanja
+   F9

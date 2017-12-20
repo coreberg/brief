@@ -1,0 +1,17 @@
+#09. PHP Test
+
+<?php
+$db_host = "localhost";
+$db_user = "mdbuser";
+$db_passwd = "*****";
+$db_name = "test";
+
+$mysqli = new mysqli($db_host, $db_user, $db_passwd, $db_name);
+if ($mysqli->connect_errno) {
+     die("Connect Error : ".$mysqli->connect_error);
+} else {
+     echo "Success";
+}
+
+phpinfo();
+?>

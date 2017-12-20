@@ -1,0 +1,126 @@
+#13. Eclipse + PDT + Tomcat + PyDev
+
+eclipse-installer > eclipse-inst > "run"
+Eclipse IDE for Java EE Developers
+
+
+"/usr/share/applications/*.desktop
+$ vi .local/share/applications/eclipse.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+GenericName=Eclipse
+Comment=Integrated Development Environment
+TryExec=/home/pc/eclipse/jee-oxygen/eclipse/eclipse
+Exec=/home/pc/eclipse/jee-oxygen/eclipse/eclipse
+Type=Application
+Keywords=eclipse;
+Icon=/home/pc/eclipse/jee-oxygen/eclipse/icon.xpm
+Categories=Development;IDE;
+StartupNotify=false
+Terminal=false
+NoDisplay=false
+Name[en]=Eclipse
+
+
+"PDT
+Help -> Install New Software and work with *: http://download.eclipse.org/tools/pdt/updates/latest/
+PHP Development Tools(PDT)
+
+
+"Tomcat
+$ cd /usr/share/tomcat8
+$ sudo ln -s /var/lib/tomcat8/conf conf
+$ sudo ln -s /etc/tomcat8/policy.d/03catalina.policy conf/catalina.policy
+$ sudo ln -s /var/log/tomcat8 log
+$ sudo chmod -R 777 conf
+
+$ sudo service tomcat8 stop
+$ sudo update-rc.d tomcat8 disable
+
+Window > Preferences > Server > Runtime Environment > Add
+Name: Apache Tomcat v8.5
+Tomcat installation directory: /usr/share/tomcat8
+
+
+"PyDev
+Help > Install New Software...
+Work with: http://pydev.org/updates
+PyDev for Eclipse
+Window > Preferences > PyDev > Interpreters > Python Interpreter > Quick Auto-Config
+Python /usr/lib/python3
+
+New Project > PyDev > PyDev Project: helloPythonProject
+PyDev Module: helloPython
+Name: helloPython
+'helloPython.py
+'''
+Created on Dec 11, 2017
+
+@author: pc
+'''
+print('hello')
+
+
+Create a Java Project:
+- Project name: helloJavaProject
+Package Explorer > helloJavaProject > src > New > Class... > Java Class
+- Source folder: helloJavaProject/src
+- Package: helloJavaProject
+- Name: helloJava
+
+" helloJava.java
+package helloJavaProject;
+
+public class helloJava {
+    public static void main(String[] args) {
+        System.out.println("hello!!!");
+    }
+}
+
+
+"[Project] - File > Properties > Java Build Path > Libraries > Add External JARs... >
+"/usr/share/java/mysql-connector-java.jar
+"Apply
+$ javap org.gjt.mm.mysql.Driver
+
+" helloJava.java
+package helloJavaProject;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class helloJava {
+    public static void main(String[] args) {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DriverManager.getConnection("jdbc:mysql://localhost", "DBUSER", "PASSWORD");
+
+            st = conn.createStatement();
+            rs = st.executeQuery("SHOW DATABASES");
+
+            if (st.execute("SHOW DATABASES")) {
+                rs = st.getResultSet();
+            }
+
+            while (rs.next()) {
+                String str = rs.getNString(1);
+                System.out.println(str);
+            }
+        } catch (SQLException sqex) {
+            System.out.println("SQLException: " + sqex.getMessage());
+            System.out.println("SQLState: " + sqex.getSQLState());
+        } finally {
+            if (rs != null) { try { rs.close(); } catch (Exception e) {}}
+            if (st != null) { try { st.close(); } catch (Exception e) {}}
+            if (conn != null) { try {conn.close();} catch (Exception e) {}}
+        }
+        System.out.println("hello!!!");
+    }
+}

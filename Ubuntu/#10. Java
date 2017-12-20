@@ -1,0 +1,12 @@
+#10. Java
+
+$ sudo apt-get purge openjdk*
+
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo add-apt-repository ppa:webupd8team/java
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install java-common oracle-java8-installer
+
+$ java -version

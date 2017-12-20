@@ -1,0 +1,35 @@
+#11. Tomcat 8
+
+$ sudo apt install tomcat8
+$ sudo apt-get install libmysql-java
+$ sudo ln -s /usr/share/java/mysql-connector-java.jar /usr/share/tomcat8/lib/mysql-connector-java.jar
+$ sudo service tomcat8 restart
+
+
+$ java -version
+$ javac -version
+
+$ sudo groupadd tomcat
+
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
+
+$ sudo netstat -tnlp
+tcp6       0      0 :::8080 :::*                    LISTEN 3839/java
+
+$ sudo lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
+*:8080 java
+
+$ sudo /etc/init.d/tomcat8 restart
+
+
+"/var/lib/tomcat8/webapps/ROOT -> /home/pc/webapps/WebContent
+$ cd /var/lib/tomcat8/conf
+$ sudo vi server.xml
+      <!-- Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true" -->
+      <Host name="localhost"  appBase="/home/pc/webapps"
+            unpackWARs="true" autoDeploy="true">
+        <Context path="" docBase="WebContent" reloadable="true" />
+      ...
+      </Host>
+$ sudo service tomcat8 restart
