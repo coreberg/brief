@@ -3,7 +3,7 @@
 $ sudo passwd root
 
 
-"Korean
+"Korean(iBus)
 
 1. Software Center > GNOME Tweaks > [ Install ]
 
@@ -26,3 +26,35 @@ English (US) > "-"
  > Hanja...
    Hangul_Hanja
    F9
+
+
+"Korean(fcitx)
+
+"Install
+1. $ sudo apt-get install fcitx-hangul
+2. [System Settings...] - [Language Support] - "Install" - Keyboard input method system: fcitx
+3. Restart
+
+"Setting
+1. [System Settings...] - [Keyboard] - Shortcuts - Typing
+- Switch to next source: Disabled
+- Switch to previous source: Disabled
+- Compose Key: Disable
+- Alternative Characters Key: Disabled
+
+- Compose Key: Right Alt
+- Switch to next source: Multikey
+2. Top Menu... - fcitx - Configure Current Input Method
+- Input Method - '+' - hangul
+- Global Config - Hotkey
+-- Trigger Input Method: Shift+Space, Shift+Space
+-- Extra key for trigger input method: Disabled
+- Global Config - Program
+-- Share State Among Window: All
+3. Logout
+
+4. $ vi .config/fcitx/config
+ShowInputWindowAfterTriggering=False
+5. Top Menu... - fcitx - Restart   or   $ fcitx -r
+
+hanja: F9
