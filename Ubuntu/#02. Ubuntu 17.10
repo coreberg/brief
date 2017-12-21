@@ -28,7 +28,7 @@ English (US) > "-"
    F9
 
 
-"Korean(fcitx)
+"Korean(fcitx): 16.04
 
 "Install
 1. $ sudo apt-get install fcitx-hangul
@@ -58,3 +58,10 @@ ShowInputWindowAfterTriggering=False
 5. Top Menu... - fcitx - Restart   or   $ fcitx -r
 
 hanja: F9
+
+
+"Korean(fcitx): 17.01
+
+1. $ sudo apt install fcitx fcitx-hangul
+2. [System Settings...] - [Language Support] - "Install" - Keyboard input method system: fcitx
+3. [System Settings...] - Text Entry - '+' - Hangul(fcitx) - Add
