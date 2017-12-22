@@ -1,5 +1,14 @@
 #10. Java
 
+"Open JDK
+$ sudo apt-get update
+$ java -version
+$ sudo apt-get install default-jre
+$ sudo apt-get install openjdk-8-jre
+$ sudo apt-get install openjdk-8-jdk
+
+
+"Oracle JDK
 $ sudo apt-get purge openjdk*
 
 $ sudo apt-get update
