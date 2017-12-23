@@ -3,6 +3,10 @@
 $ sudo passwd root
 
 
+"ttc
+$ sudo cp gulim.ttc /usr/local/share/fonts/
+
+
 "Korean(iBus)
 
 1. Software Center > GNOME Tweaks > [ Install ]
