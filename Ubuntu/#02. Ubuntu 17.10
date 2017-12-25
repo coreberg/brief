@@ -7,6 +7,11 @@ $ sudo passwd root
 $ sudo cp gulim.ttc /usr/local/share/fonts/
 
 
+"Update Server
+$ sudo vi /etc/apt/sources.list
+:%s/kr.archive.ubuntu.com/ftp.daumkakao.com
+
+
 "Korean(iBus)
 
 1. Software Center > GNOME Tweaks > [ Install ]
