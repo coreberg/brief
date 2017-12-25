@@ -1,6 +1,8 @@
 GitHub
 ------
 
+$ sudo apt install git
+
 1. New repository
 GitHun.com > New repository > Repository name: os
 
