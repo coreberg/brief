@@ -9,7 +9,7 @@ GitHun.com > New repository > Repository name: os
 2. commit
 $ mkdir git
 $ cd git
-$ git clone https://github.com/user-name/os.git
+$ git clone https://github.com/user-name/os
 $ cd os
 ~/github/os (master)
 $ git config --global user.name "user-name"
