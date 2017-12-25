@@ -1,12 +1,13 @@
 GitHub
 ------
 
-$ sudo apt install git
-
 1. New repository
 GitHun.com > New repository > Repository name: os
 
-2. commit
+2. Install git
+$ sudo apt install git
+
+3. commit
 $ mkdir git
 $ cd git
 $ git clone https://github.com/user-name/os
@@ -15,7 +16,7 @@ $ cd os
 $ git config --global user.name "user-name"
 $ git config --global user.email "user-email"
 
-3. add, rm, vm
+4. add, rm, vm
 $ git add *
 $ git rm file-name
 $ git old-file new-file
@@ -23,7 +24,7 @@ $ git old-file new-file
 $ git commit -m "."
 $ git push
 
-4. branch
+5. branch
 " local branch
 $ git branch
 * master
