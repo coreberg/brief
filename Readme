@@ -5,6 +5,8 @@ GitHub
 GitHun.com > New repository > Repository name: os
 
 2. commit
+$ mkdir git
+$ cd git
 $ git clone https://github.com/user-name/os.git
 $ cd os
 ~/github/os (master)
