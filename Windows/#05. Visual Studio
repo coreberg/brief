@@ -1,0 +1,19 @@
+[Visual Studio]
+
+
+#01. Download
+#02. Visual Studio
+
+
+#01. Download
+
+https://www.microsoft.com/net/core#windowsvs2015
+DotNetCore.1.0.1-VS2015Tools.Preview2.0.3.exe
+
+
+#02. Visual Studio
+
+Create a new .NET Core project
+Click on File / New project and select the project template C# / .NET Core / Console application (.NET Core)
+
+Click on the menu item Debug / Start debugging to launch and debug

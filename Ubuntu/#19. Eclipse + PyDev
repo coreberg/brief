@@ -1,0 +1,19 @@
+#19. Eclipse + PyDev
+
+
+Help > Install New Software...
+Work with: http://pydev.org/updates
+PyDev for Eclipse
+Window > Preferences > PyDev > Interpreters > Python Interpreter > Quick Auto-Config
+Python /usr/lib/python3
+
+New Project > PyDev > PyDev Project: helloPythonProject
+PyDev Module: helloPython
+Name: helloPython
+'helloPython.py
+'''
+Created on Dec 11, 2017
+
+@author: pc
+'''
+print('hello')

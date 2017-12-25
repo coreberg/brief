@@ -1,5 +1,19 @@
-#01. apt
+#01. Ubuntu
 
+
+$ sudo passwd root
+
+
+"Update Server
+$ sudo vi /etc/apt/sources.list
+:%s/kr.archive.ubuntu.com/ftp.daumkakao.com
+
+
+"ttc
+$ sudo cp gulim.ttc /usr/local/share/fonts/
+
+
+"apt-get
 $ apt-get update
 $ apt-get upgrade
 
@@ -11,3 +25,7 @@ $ apt-get --reinstall install [package name]
 
 $ apt-get remove [package name]
 $ sudo apt-get purge [package name]
+
+
+"
+$ sudo service apache2|mysql|tomcat8 start|stop|restart

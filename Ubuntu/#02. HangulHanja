@@ -1,18 +1,26 @@
-#02. Ubuntu 17.10
-
-$ sudo passwd root
+#02. HangulHanja
 
 
-"ttc
-$ sudo cp gulim.ttc /usr/local/share/fonts/
+"Korean(iBus): 18.04 LTS (Bionic Beaver) Daily Build
+
+1. Settings > Region & Language > Manage Installed Languages > [
+Install ] > ibus-hangul...
+
+2. Restart or Log out
+
+3. Region & Language > Input Sources > "+" > Korean(Hangul) > "Add"
+English (US) > "-"
+
+4. Korean(Hangul) > Setup > iBusHangul Setup
+ > Hangul toggle key...
+   Hangul
+   Shift+space
+ > Hanja...
+   Hangul_Hanja
+   F9
 
 
-"Update Server
-$ sudo vi /etc/apt/sources.list
-:%s/kr.archive.ubuntu.com/ftp.daumkakao.com
-
-
-"Korean(iBus)
+"Korean(iBus): 17.10
 
 1. Software Center > GNOME Tweaks > [ Install ]
 
@@ -35,6 +43,13 @@ English (US) > "-"
  > Hanja...
    Hangul_Hanja
    F9
+
+
+"Korean(fcitx): 17.01
+
+1. $ sudo apt install fcitx fcitx-hangul
+2. [System Settings...] - [Language Support] - "Install" - Keyboard input method system: fcitx
+3. [System Settings...] - Text Entry - '+' - Hangul(fcitx) - Add
 
 
 "Korean(fcitx): 16.04
@@ -65,12 +80,3 @@ English (US) > "-"
 4. $ vi .config/fcitx/config
 ShowInputWindowAfterTriggering=False
 5. Top Menu... - fcitx - Restart   or   $ fcitx -r
-
-hanja: F9
-
-
-"Korean(fcitx): 17.01
-
-1. $ sudo apt install fcitx fcitx-hangul
-2. [System Settings...] - [Language Support] - "Install" - Keyboard input method system: fcitx
-3. [System Settings...] - Text Entry - '+' - Hangul(fcitx) - Add

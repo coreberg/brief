@@ -1,0 +1,250 @@
+[Eclipse]
+
+
+#01. JDK
+#02. Eclipse
+#03. Java Project
+#04. Tomcat
+#05. MySQL(Java)
+#06. MySQL(JSP)
+#07. Oracle(Java)
+#08. Oracle(JSP)
+
+
+#01. JDK
+
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+ 
+Java Platform (JDK) 8u111 / 8u112
+Java SE Development Kit 8u111...
+(O) Accpet License Agreement...
+Windows x64(187.4 MB) jdk-8u111-windows-x64.exe...
+
+Install to:
+C:\Program Files\Java\jdk1.8.0_111\
+C:\Program Files\Java\jre1.8.0_111
+# http://docs.oracle.com/javase/8/docs/
+
+This PC > Properties -> System > Advanced system settings > Environment Variables...
+1) System variables - New...
+- Variable name: JAVA_HOME
+- Variable value: C:\Program Files\Java\jdk1.8.0_111
+2) System variables - Edit 'Path'
+- %JAVA_HOME%\bin
+
+Command Prompt(Admin)
+> Java -version
+~
+> Javac
+~
+
+#02. Eclipse
+
+http://www.eclipse.org/downloads/
+[Eclipse IDE for Java EE Developers]
+File: eclipse-jee-neon-1a-win32-x86_64.zip
+
+Workspace: C:\Users\pc\workspace
+
+Window - Preferences...
+1) General - Workspace... Text file encoding - UTF-8
+2) Java - Compiler / Installed JREs... "Check Version"
+#http://help.eclipse.org/neon/index.jsp
+
+
+#03. Java Project
+
+Create a Java Project:
+- Project name: helloJavaProject
+Package Explorer > helloJavaProject > src > New > Class... > Java Class
+- Source folder: helloJavaProject/src
+- Package: helloJavaProject
+- Name: helloJava
+
+# helloJava.java
+package helloJavaProject;
+
+public class helloJava {
+	public static void main(String[] args) {
+		System.out.println("hello!!!");
+	}
+}
+
+
+#04. Tomcat
+
+http://tomcat.apache.org/download-90.cgi
+64-bit Windows zip(apache-tomcat-9.0.0.M13-windows-x64.zip)
+Location: C:\Server\apache-tomcat-9.0.0.M13
+
+Variable name: CATALINAHOME
+Variable value: C:\Server\apache-tomcat-9.0.0.M13
+
+# Test: %CATALINA_HOME%\bin
+> ./startup.bat
+localhost:8080
+> ./shutdown.bat
+
+# eclipse
+Window > Preference -> Server > Runtime Environments -> Add Tomcat Server
+Name: Apache Tomcat v9.0
+Tomcat installation directory: C:\Server\apache-tomcat-9.0.0.M13
+
+# Restart
+
+Window > Show View > Server > Servers
+
+Web > Dynamic Web Project
+Project name: helloWebProject
+Project name > WebContent -> New > JSP File
+- File name: index.
+[Run]
+
+
+#05. MySQL(Java)
+
+http://dev.mysql.com/downloads/connector/j/
+mysql-connector-java-5.1.40.zip
+> copy mysql-connector-java-5.1.40-bin.jar C:\Program Files\Java\jre1.8.0_111\lib\ext\
+
+[Project] > Properties -> Java Build Path > Libraries > Add External JARs…
+-> C:\Program Files\Java\jre1.8.0_111\lib\ext\mysql-connector-java-5.1.40-bin.jar
+
+# helloJava.java
+package helloJavaProject;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class helloJava {
+    public static void main(String[] args) {
+        Connection conn = null;
+        Statement st = null;
+        ResultSet rs = null;
+        
+        try {	 
+            conn = DriverManager.getConnection("jdbc:mysql://localhost", "username", "password");
+ 
+            st = conn.createStatement();
+            rs = st.executeQuery("SHOW DATABASES");
+ 
+            if (st.execute("SHOW DATABASES")) {
+                rs = st.getResultSet();
+            }
+ 
+            while (rs.next()) {
+                String str = rs.getNString(1);
+                System.out.println(str);
+            }
+        } catch (SQLException sqex) {
+            System.out.println("SQLException: " + sqex.getMessage());
+            System.out.println("SQLState: " + sqex.getSQLState());
+        } finally {
+            if (rs != null) { try { rs.close(); } catch (Exception e) {}}
+            if (st != null) { try { st.close(); } catch (Exception e) {}}
+            if (conn != null) { try {conn.close();} catch (Exception e) {}}
+        }
+        System.out.println("hello!!!");
+    }
+}
+
+
+#06. MySQL(JSP)
+
+http://dev.mysql.com/downloads/connector/j/
+mysql-connector-java-5.1.40.zip
+> copy mysql-connector-java-5.1.40-bin.jar C:\Program Files\Java\jre1.8.0_111\lib\ext\
+
+[Project] > Properties -> Java Build Path > Libraries > Add External JARs…
+-> C:\Program Files\Java\jre1.8.0_111\lib\ext\mysql-connector-java-5.1.40-bin.jar
+
+# index.jsp
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import = "java.sql.*"%>
+<%
+Connection conn = null;
+try {
+    String url = "jdbc:mysql://localhost:3306/world";
+    String id = "username";
+    String pw = "password";
+    Class.forName("com.mysql.jdbc.Driver");
+    conn=DriverManager.getConnection(url, id, pw);
+    System.out.println("Connect!!!");
+} catch(Exception e) {
+	System.out.println("Error!!!");
+    e.printStackTrace();
+}
+%>
+
+
+#07. Oracle(Java)
+
+[Project] > Properties -> Java Build Path > Libraries > Add External JARs…
+-> C:\app\pc\product\12.1.0\dbhome_1\jdbc\lib\ojdbc7.jar
+
+# helloJava.java
+package helloJavaProject;
+
+import java.sql.*;
+
+public class helloJava {
+    public static void main(String[] args) {
+        Connection conn = null;
+        Statement stmt = null;
+        
+        try {
+            String driver = "oracle.jdbc.driver.OracleDriver";
+            Class.forName(driver);
+
+            String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+            String user = "sys as sysdba";
+            String password = "password";
+            conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Connect!!!");
+
+            stmt=(Statement) conn.createStatement();
+        } catch(ClassNotFoundException ce) {
+            System.out.println(ce.getMessage());
+        } catch(SQLException se) {
+            System.out.println(se.getMessage());
+        } finally {
+        	//stmt.close();
+        	//conn.close();
+        }
+    }
+}
+
+
+#08. Oracle(JSP)
+
+Copy C:\app\pc\product\12.1.0\dbhome_1\jdbc\lib\ojdbc7.jar -> [Project] > WebContent > WEB-INF > lib
+
+# index.jsp
+<%@ page import = "java.sql.*"%>
+<%
+Connection conn = null;
+Statement stmt = null;
+
+try {
+    String driver = "oracle.jdbc.driver.OracleDriver";
+    Class.forName(driver);
+
+    String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+    String user = "sys as sysdba";
+    String password = "password";
+    conn = DriverManager.getConnection(url, user, password);
+    stmt = conn.createStatement();
+    
+    conn.close();
+    System.out.println("Connect!!!");
+
+} catch(Exception e) {
+    System.out.println("Error!!!");
+    System.out.println(e.getMessage());
+    e.printStackTrace();
+}
+%>

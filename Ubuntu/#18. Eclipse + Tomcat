@@ -1,0 +1,12 @@
+#18. Eclipse + Tomcat
+
+
+$ cd /usr/share/tomcat8
+$ sudo ln -s /var/lib/tomcat8/conf conf
+$ sudo ln -s /etc/tomcat8/policy.d/03catalina.policy conf/catalina.policy
+$ sudo ln -s /var/log/tomcat8 log
+$ sudo chmod -R 777 conf
+
+Window > Preferences > Server > Runtime Environment > Add
+Name: Apache Tomcat v8.5
+Tomcat installation directory: /usr/share/tomcat8

@@ -1,4 +1,5 @@
-#08. MySQL
+#09. MySQL
+
 
 $ sudo apt-get install mysql-server mysql-client
 Enter password for user root: ENTER ROOT PASSWORD
@@ -23,3 +24,6 @@ collation-server = utf8mb4_unicode_ci
 $ sudo apt-get install php-mysql
 
 $ sudo service mysql restart
+
+$ sudo service mysql stop
+$ sudo update-rc.d mysql disable

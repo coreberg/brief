@@ -1,4 +1,5 @@
-#12. JSP Test
+#14. JSP Test
+
 
 $ sudo vi /var/lib/tomcat8/webapps/ROOT/hello.jsp
 <%@ page language="java" contentType="text/html; charset=EUC-KR"

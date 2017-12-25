@@ -1,0 +1,25 @@
+[Visual Studio Code]
+
+
+#01. settings.json
+#02. Python + [F5]
+
+
+#01. settings.json
+
+File > Preferences > Workspace Settings and added in settings.json
+
+{
+    "editor.fontSize": 13,
+    "python.pythonPath": "C:/Users/pc/AppData/Local/Programs/Python/Python35-32/python.exe",
+    "php.validate.executablePath": "C:/Program Files/PHP/v7.0/php.exe",
+}
+
+
+#02. Python + [F5]
+
+Open Folder... -> Ctrl + Shift + p
+> python -> launch.json
+"name": "Python Console App",
+#DEBUG CONSOLE
+file edit -> [F5]

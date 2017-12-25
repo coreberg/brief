@@ -1,0 +1,53 @@
+#04. git
+
+
+1. New repository
+GitHun.com > New repository > Repository name: repository_name
+
+2. Install git
+$ sudo apt install git
+
+3. commit
+$ mkdir git
+$ cd git
+$ git clone https://github.com/user-name/repository_name
+$ cd repository_name
+~/github/repository_name (master)
+$ git config --global user.name "user-name"
+$ git config --global user.email "user-email"
+
+4. add, rm, vm
+$ git add *
+$ git rm file-name
+$ git old-file new-file
+
+$ git commit -m "."
+$ git push
+
+5. branch
+" local branch
+$ git branch
+* master
+
+" remote branch
+$ git branch -r
+  origin/master
+
+$ git checkout -b new-branch
+$ git branch
+* new_branch
+  master
+
+$ git push origin new-branch
+
+" merge into master from new_branch
+> github.com > New pull request > Create pull request
+
+" Project Administrator
+> 'Merge pull request' or 'Close pull request'
+
+" Delete local branch
+$ git branch -d branch-name
+
+" Delete remote branch
+$ git push origin :branch-name

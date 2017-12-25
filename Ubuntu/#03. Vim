@@ -1,5 +1,6 @@
 #03. Vim
 
+
 $ sudo apt install vim
 $ vi .vimrc
 if has("syntax")

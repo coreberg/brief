@@ -1,4 +1,5 @@
-#07. MariaDB
+#08. MariaDB
+
 
 $ sudo apt-get install mariadb-server
 $ sudo apt-get install mariadb-client
@@ -49,3 +50,6 @@ MariaDB [mysql]> select host, user, password from user;
 MariaDB [mysql]> grant all privileges on *.* to 'root'@'%' identified by
 '*****';
 MariaDB [mysql]> select host, user, password from user;
+
+$ sudo service mysql stop
+$ sudo update-rc.d mysql disable

@@ -1,0 +1,27 @@
+[nasm]
+
+
+#01. Download
+#02. Copy
+#03. Path
+#04. Test
+
+
+#01. Download
+
+http://www.nasm.us/pub/nasm/releasebuilds/2.12.02/win64/nasm-2.12.02-win64.zip
+
+
+#02. Copy
+
+copy nasm C:\Program Files\nasm
+
+
+#03. Path
+
+System variables > Path > C:\Program Files\nasm
+
+
+4. Test
+
+>nasm -h

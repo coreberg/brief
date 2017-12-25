@@ -1,0 +1,31 @@
+[Powershell + Vim]
+
+
+#01. Install Git
+#02. Vim
+
+
+#01. Install Git
+
+
+#02. Vim
+
+Run PowerShell(Run as Administrator)
+> Get-ExecutionPolicy
+> Set-ExecutionPolicy RemoteSigned -> YES
+> new-item -path $profile -itemtype file -force
+> notepad $profile
+set-alias vim "C:/Program Files/Git/usr/bin/./vim.exe"
+
+# To edit the Powershell Profile
+# (Not that I'll remember this)
+Function Edit-Profile
+{
+    vim $profile
+}
+
+# To edit Vim settings
+Function Edit-Vimrc
+{
+    vim $HOME\_vimrc
+}

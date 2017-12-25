@@ -1,24 +1,11 @@
-#11. Tomcat 8
+#13. Tomcat 8
+
 
 $ sudo apt install tomcat8
 $ sudo apt-get install libmysql-java
 $ sudo ln -s /usr/share/java/mysql-connector-java.jar /usr/share/tomcat8/lib/mysql-connector-java.jar
+
 $ sudo service tomcat8 restart
-
-
-$ java -version
-$ javac -version
-
-$ sudo groupadd tomcat
-
-https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
-
-$ sudo netstat -tnlp
-tcp6       0      0 :::8080 :::*                    LISTEN 3839/java
-
-$ sudo lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
-*:8080 java
-
 $ sudo /etc/init.d/tomcat8 restart
 
 
@@ -33,3 +20,6 @@ $ sudo vi server.xml
       ...
       </Host>
 $ sudo service tomcat8 restart
+
+$ sudo service tomcat8 stop
+$ sudo update-rc.d tomcat8 disable

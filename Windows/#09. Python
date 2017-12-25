@@ -1,0 +1,26 @@
+[Python]
+
+
+#01. Installation
+#02. Visual Studio
+#03. Path
+
+
+#01. Installation
+
+Customize installation
+[v] Install Launcher for all users(recommended)
+[v] Add Python 3.5 to PATH
+
+Location: C:\Tools\Python\Python35-32
+
+
+#02. Visual Studio
+
+Tools > Python Tools > Python Environment
+
+
+#03. Path
+
+TEMP - Path > C:\Python34
+New > name: PYTHONPATH, Value: C:\Python34\Lib

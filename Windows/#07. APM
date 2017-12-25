@@ -1,0 +1,100 @@
+[APM]
+
+
+#01. Apache2
+#02. PHP
+#03. httpd.conf(Apache, PHP)
+#04. MySQL
+
+
+#01. Apache2
+
+https://www.apachelounge.com/download/
+httpd-2.4.23-win64-VC14.zip
+Location: C:/Server/Apache24
+
+# /conf/http.conf
+ServerRoot "C:/Server/Apache24"
+~
+Listen 80
+~
+ServerAdmin ip127001@outlook.com
+~
+ServerName localhost:80
+
+# Command Prompt(Admin)
+C:\Server\Apache24\bin>httpd.exe -k install
+C:\Server\Apache24\bin>httpd.exe -k start
+
+# Add Window Servie(services.msc)
+Apche2.4
+
+# Test
+http://127.0.0.1
+
+
+#02. PHP
+
+http://windows.php.net/download/
+VC14 x64 Thread Safe (2016-Jun-22 19:17:02) php-7.0.8-Win32-VC14-x64.zip
+Location: C:/Server/php7
+
+C:/Server/php7> mv php.ini-development php.ini
+
+# php.ini
+Short_open_tag= Off
+~
+extension_dir = "c:/Server/php7/ext"
+~
+extension=php_mysqli.dll
+~
+extension=php_pdo_mysql.dll
+~
+error_reporting = E_ALL & ~E_NOTICE
+
+
+#03. httpd.conf(Apache, PHP)
+
+# /conf/httpd.conf
+DirectoryIndex index.html index.php
+~
+PHPIniDir "c:/Server/php7"
+LoadModule php7_module "c:/Server/php7/php7apache2_4.dll"
+AddType application/x-httpd-php .html .htm .php
+
+# Command Prompt
+C:\Server\Apache24\bin>httpd.exe -t
+C:\Server\Apache24\bin>httpd.exe -k restart
+
+
+#04. MySQL
+
+http://dev.mysql.com/downloads/mysql/
+MySQL Installer 5.7.13(mysql-installer-community-5.7.13.0.msi)
+Location: C:\Program Files\MySQL
+
+#Setup Type
+Server Only
+
+# MySQL 5.7 Command Line Client...
+Enter password: ***** : go(00123);go(**!@#);
+~
+
+# Rebooting
+
+# info.php
+<?php
+$db_host = "localhost";
+$db_user = "root";
+$db_passwd = "****";
+$db_name = "mysql";
+
+$mysqli = new mysqli($db_host, $db_user, $db_passwd, $db_name);
+if ($mysqli->connect_errno) {
+    die("Connect Error : ".$mysqli->connect_error);
+} else {
+    echo "Success";
+}
+
+phpinfo();
+?>

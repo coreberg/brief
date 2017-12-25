@@ -1,0 +1,24 @@
+#15. Eclipse
+
+
+eclipse-installer > eclipse-inst > "run"
+Eclipse IDE for Java EE Developers
+
+
+"/usr/share/applications/*.desktop
+$ vi .local/share/applications/eclipse.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+GenericName=Eclipse
+Comment=Integrated Development Environment
+TryExec=/home/pc/eclipse/jee-oxygen/eclipse/eclipse
+Exec=/home/pc/eclipse/jee-oxygen/eclipse/eclipse
+Type=Application
+Keywords=eclipse;
+Icon=/home/pc/eclipse/jee-oxygen/eclipse/icon.xpm
+Categories=Development;IDE;
+StartupNotify=false
+Terminal=false
+NoDisplay=false
+Name[en]=Eclipse

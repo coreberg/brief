@@ -1,4 +1,5 @@
-#10. Java
+#11. Java
+
 
 "Open JDK
 $ sudo apt-get update
@@ -19,3 +20,4 @@ $ sudo apt-get upgrade
 $ sudo apt-get install java-common oracle-java8-installer
 
 $ java -version
+$ javac -version

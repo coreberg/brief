@@ -1,4 +1,5 @@
-#05. Apache2
+#06. Apache2
+
 
 $ sudo apt-get install apache2
 $ sudo apache2 -v
@@ -55,3 +56,6 @@ $ sudo vi /etc/apache2/apache2.conf
 </DirectoryMatch>
 
 $ sudo service apache2 restart
+
+$ sudo service apache2 stop
+$ sudo update-rc.d apache2 disable

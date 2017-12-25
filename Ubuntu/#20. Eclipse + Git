@@ -1,8 +1,9 @@
-#14. Eclipse + GitHub
+#20. Eclipse + Git
+
 
 1. Eclipse > Window > Perspective > Open Perspective > Other... > Git
-2. Git Repositories... -> Paste Repository Path or URI
-3. Clone Git Repository...
+
+2. Clone Git Repository...
 URI: https://github.com/coreberg.git   *.git
 Host: github.com
 Repository path: /coreberg.git         *.git

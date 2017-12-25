@@ -1,0 +1,59 @@
+[Oracle]
+
+
+[Extract]
+winx64_12102_database_1of2.zip -> database_1
+winx64_12102_database_2of2.zip -> database_2
+
+> copy 'database_2\database\stage\Components\oracle.*' 'database_1\database\stage\Components\'
+database_1\database\setup.exe(Run as administrator)
+
+[Configure Security Updates]
+[] I wish to receive security updates via my Oracle support.
+
+[Installation Option]
+[o] Create and configure a database
+
+[System Class]
+[o] Desktop class
+
+[Oracle Home User Selection]
+[o] Use Windows Built-in Account
+
+[Typical Installation]
+Oracle base: C:\app\pc
+Software location: C:\app\pc\product\12.1.0\dbhome_1
+Database file location: C:\app\pc\oradata
+Character Set: Unicode(AL32UTF8)
+Global database name: orcl
+Administrative password: go9000123GO9000123
+Confirm password:
+[o] Create as container database
+Pluggable database name: pdborcl
+
+
+logfiles: c:\app\pc\cfgtoollogs\dbca\orcl
+DatabaseInformation:
+    Global Database Name: orcl
+    System Identifier(SID): orcl
+    Server Parameter File name: c:\app\pc\product\12.1.0\dbhome_1\database\spfileorcl.ora
+EM Database Express URL: https://localhost:5500/em
+
+
+[Command Prompt...]
+C:\>Users\pc>set ORACLE_SID=oradb
+C:\>Users\pc>echo %ORACLE_SID%
+oradb
+C:\>Users\pc>set ORACLE_HOME=C:\app\pc\product\12.1.0\dbhome_1
+C:\>Users\pc>echo %ORACLE_HOME%
+C:\app\pc\product\12.1.0\dbhome_1
+
+C:\Users\pc>sqlplus /nolog
+~
+SQL> connect / as sysdba;
+Connected.
+SQL> select name from v$database;
+NAME
+----------
+ORCL
+SQL> exit
