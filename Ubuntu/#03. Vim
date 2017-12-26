@@ -16,3 +16,14 @@ set shiftwidth=4
 set showmatch
 set softtabstop=4
 set tabstop=4
+
+
+:shell or :sh
+exit or Ctrl+D
+
+:!
+:r textfile
+:r !
+
+:set shell ?
+:set shell=/path/shell
