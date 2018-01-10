@@ -27,5 +27,10 @@ $ apt-get remove [package name]
 $ sudo apt-get purge [package name]
 
 
+"Theme
+$ sudo apt install gnome-tweak-tool
+Run: tweak
+
+
 "
 $ sudo service apache2|mysql|tomcat8 start|stop|restart

@@ -16,7 +16,7 @@ set shiftwidth=4
 set showmatch
 set softtabstop=4
 set tabstop=4
-
+set expandtab
 
 :shell or :sh
 exit or Ctrl+D
