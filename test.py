@@ -1,3 +1,6 @@
+<style>
+* { font-family: consolas }
+</style>
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
