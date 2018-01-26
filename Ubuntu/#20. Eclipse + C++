@@ -1,0 +1,8 @@
+#20. Eclipse + C++
+
+
+Error: Launch failed. Binary not Found.
+
+Project - Properties - Run/Debug Setting - New - C/C++ Application
+C/C++ Application: Debug/project_name - OK
+Ctrl+B - Run
