@@ -1,0 +1,14 @@
+#22. Eclipse + Ruby
+
+
+Help - Eclipse Marketplace - search: Ruby - Ruby (DLTK) - Install
+
+Create  a Ruby project - Interpreter - Use default interpreter(Currently 'ruby') - Configure interpreters...
+Interpreters - Search
+Name: ruby
+Type: Generic Ruby
+Location: /usr/bin/ruby
+
+Project name: HelloRubyProject
+
+New - Ruby Class: HelloRuby

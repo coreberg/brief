@@ -1,0 +1,11 @@
+#21. Eclipse + Perl
+
+
+Help -> Install New Software and work with *: http://e-p-i-c.sf.net/updates/testing
+EPIC
+
+Window - Preferences - Perl EPIC
+[ ] Suspend debugger at first statement
+
+Debug:
+$ sudo apt-get install libpadwalker-perl
