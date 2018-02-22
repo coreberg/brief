@@ -18,12 +18,114 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 
-:shell or :sh
-exit or Ctrl+D
 
-:!
+#Command mode
+[ESC]
+
+:wq   or   ZZ   write & quit
+:q!             quit(force)
+:q              quit
+:m,n w file     write file(line m ~ n)
+:f              find out the line numbers
+
+:w              write
+:w file
+:e file         edit
+:r file         read
+
+#Insert mode
+a               []_
+A               [......]_
+i               _[]
+I               _[......]
+o               [new line]
+                _
+O               [new line]
+
+#Delete
+x               character
+dw              word
+db              word(backword)
+dd              line
+d$
+d^
+
+#Cursor movement
+h               left
+j               down
+k               up
+l               right
+
+w               forward 1 word
+b               backward 1 word
+
+$               end of line
+^
+0
+
+nG   or   :n    line n
+gg   or   1g    line 1
+G               end of page
+
+^f              1 page forward
+^b              1 page backward
+^u              up half screenful
+^d              down half screenful
+
+
+#Yank(Copy)
+yy              line
+y$              end of current line from cursor
+yw              end of current word from cursor
+ny              n lines
+
+#Paste
+p               below cursor
+P               above cursor
+u               undo last change
+U               restore line
+J               Join next line down to the end of the current line               
+
+#Yank & Paste
+v
+v               line
+^v              block
+[h|j|k|l]
+yp              yank & paste
+
+#Split
+:split file
+:e file         edit
+^w ^w           move cursor to another window(cycle)
+^w, [up arrow]  move cursor up a window
+^w_             maximize current window
+^w=             make all equal size
+10^w+           increast window size(10 lines)
+:vsplit file    vertical split
+:sview file     split(readonly)
+:hide           close
+:only           keep only this window open
+:ls             show current buffers
+:b 2            open buffer #2 in this window
+
+#Shell
+:![command]     ex) :!ls
 :r textfile
-:r !
+
+:shell
+:sh
+exit or ^D
 
 :set shell ?
 :set shell=/path/shell
+
+#Commands
+:help command
+[n]command      n times
+.               repeat last command
+r               replace 1 character at the cursor position
+R               replace or overstrike(ESC key to exit)
+:g/old/s//new/g replace old -> new
+:/[pattern]     search forward
+:?[pattern]     search backword
+u               undone

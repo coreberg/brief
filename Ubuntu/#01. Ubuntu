@@ -12,6 +12,19 @@ $ sudo vi /etc/apt/sources.list
 "ttc
 $ sudo cp gulim.ttc /usr/local/share/fonts/
 
+$ sudo cp c* /usr/share/fonts/truetype/
+$ sudo cp g* /usr/share/fonts/opentype/
+$ fc-cache -f -v
+
+
+
+/usr/share/fonts/
+/home/username/.local/share/fonts
+/home/username/.fonts
+/var/cache/fontconfig
+/home/username/.cache/fontconfig
+/home/username/.fontconfig
+
 
 "apt-get
 $ apt-get update
@@ -31,6 +44,14 @@ $ sudo apt-get purge [package name]
 $ sudo apt install gnome-tweak-tool
 Run: tweak
 
+"Error:
+System program problem detected
+Do you want to report the problem now?
+"
+$ ls -l /var/crash/
+$ sudo rm /var/crash/*
+$ sudo vi /etc/default/apport
+enabled=0
 
 "
 $ sudo service apache2|mysql|tomcat8 start|stop|restart
