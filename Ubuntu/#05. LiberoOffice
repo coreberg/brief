@@ -1,6 +1,9 @@
 #05. LiberoOffice
 
 
+$ sudo dpkg -i ~/Downloads/LibreOffice*/DEBS/*.deb
+
+
 1. Tools > Options... > Language Settings > Languages
  > Default Languages for Documents
  > [v] Asian: Korean (RoK)
