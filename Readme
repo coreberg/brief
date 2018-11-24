@@ -1,2 +1,6 @@
 $ git commit -m "..."
 $ git push
+
+$ git add *
+$ git rm filename
+$ git old-file new-file
